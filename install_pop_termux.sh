@@ -1,13 +1,13 @@
 #!/bin/bash
 
 echo "████████████████████████████████████████████████████████████████"
-echo "██           SAINT KHEN | PoP TERMUX INSTALLER (PROOT)          ██"
+echo "██           SAINT KHEN | @admirkhen | follow for more        ██"
 echo "████████████████████████████████████████████████████████████████"
 sleep 1
 
 # Ask user for setup info
 read -p "Enter PoP Name (e.g. khen1): " POP_NAME
-read -p "Enter Location (e.g. nigeria): " POP_LOCATION
+read -p "Enter Location (e.g. japan): " POP_LOCATION
 read -p "Enter Invite Code: " INVITE_CODE
 read -p "Enter Email: " EMAIL
 read -p "Enter Discord Username (e.g. jijinwang): " DISCORD
@@ -58,8 +58,12 @@ cat > config.json <<EOF
 }
 EOF
 
-# Auto-start script entry in .bashrc with logging
-echo 'cd ~/popcache && ./pop --config config.json >> pop.log 2>&1 &' >> ~/.bashrc
+# Start PoP Node in background & log output
+echo "Starting PoP Node..."
+nohup ./pop --config config.json > ~/popcache/pop.log 2>&1 &
 
-# Run PoP node directly now
-./pop --config config.json >> pop.log 2>&1
+sleep 2
+echo "✅ PoP Node started in background."
+echo "📄 Showing live logs now (press Ctrl+C to stop viewing logs)..."
+sleep 2
+tail -f ~/popcache/pop.log
