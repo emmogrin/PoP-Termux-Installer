@@ -58,5 +58,8 @@ cat > config.json <<EOF
 }
 EOF
 
-# Run PoP node directly in foreground
-./pop --config config.json
+# Auto-start script entry in .bashrc with logging
+echo 'cd ~/popcache && ./pop --config config.json >> pop.log 2>&1 &' >> ~/.bashrc
+
+# Run PoP node directly now
+./pop --config config.json >> pop.log 2>&1
