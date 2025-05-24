@@ -31,8 +31,8 @@ cat > config.json <<EOF
   "invite_code": "$INVITE_CODE",
   "server": {
     "host": "0.0.0.0",
-    "port": 8443,
-    "http_port": 8080,
+    "port": 443,
+    "http_port": 80,
     "workers": 20
   },
   "cache_config": {
