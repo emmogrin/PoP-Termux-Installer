@@ -32,7 +32,7 @@ cat > config.json <<EOF
   "server": {
     "host": "0.0.0.0",
     "port": 8443,
-    "http_port": 8080,
+    "http_port": 80,
     "workers": 20
   },
   "cache_config": {
