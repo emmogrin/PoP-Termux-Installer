@@ -51,13 +51,23 @@ At least 1 SOL (Devnet) in your wallet
 ```
 proot-distro login ubuntu
 ```
-
+if you have used the repo before
+```
+git stash --include-untracked
+git pull
+git stash pop
+cd PoP-Termux-Installer
+chmod +x pipe-fire-termux.sh
+./pipe-fire-termux.sh
+```
+if you haven't ⬇️
 ```
 git clone https://github.com/emmogrin/PoP-Termux-Installer.git
 cd PoP-Termux-Installer
 chmod +x pipe-fire-termux.sh
 ./pipe-fire-termux.sh
 ```
+
 
 ---
 
