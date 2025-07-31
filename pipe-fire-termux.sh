@@ -3,6 +3,8 @@
 echo "==============================="
 echo "🚀 Welcome to Pipe Firestarter"
 echo "==============================="
+echo "🔥 by @admirkhen | github.com/emmogrin"
+echo ""
 
 # STEP 1: Clone and build pipe-cli
 echo "[1/4] Cloning and installing pipe-cli..."
@@ -15,6 +17,10 @@ cd .. || exit
 echo "[2/4] Creating new Pipe user..."
 read -p "👉 Enter a username for Pipe: " USERNAME
 pipe new-user "$USERNAME" || { echo "❌ Failed to create user"; exit 1; }
+
+# STEP 2.5: Ask how much SOL to swap
+read -p "💱 Enter amount of SOL to swap for PIPE: " SWAP_AMOUNT
+pipe swap-sol-for-pipe "$SWAP_AMOUNT" || { echo "❌ Failed to swap SOL for PIPE"; exit 1; }
 
 # STEP 3: Generate dummy files
 echo "[3/4] Creating dummy files..."
@@ -32,4 +38,4 @@ pipe upload-file pipe-dummy/sensitive.doc secure --encrypt
 pipe download-file secure decrypted.doc --decrypt
 
 echo ""
-echo "✅ Done! follow @admirkhen for more"
+echo "✅ Done! All actions completed successfully via Pipe CLI."
