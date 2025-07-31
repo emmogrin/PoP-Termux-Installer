@@ -53,10 +53,10 @@ proot-distro login ubuntu
 ```
 if you have used the repo before
 ```
+cd PoP-Termux-Installer
 git stash --include-untracked
 git pull
 git stash pop
-cd PoP-Termux-Installer
 chmod +x pipe-fire-termux.sh
 ./pipe-fire-termux.sh
 ```
