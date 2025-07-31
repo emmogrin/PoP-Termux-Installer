@@ -6,10 +6,10 @@ echo "==============================="
 
 # STEP 1: Clone and build pipe-cli
 echo "[1/4] Cloning and installing pipe-cli..."
-git clone https://github.com/PipeNetwork/pipe.git
-cd pipe/pipe-cli || exit
+git clone https://github.com/PipeNetwork/pipe.git || { echo "❌ Failed to clone repo"; exit 1; }
+cd pipe || { echo "❌ 'pipe' directory not found"; exit 1; }
 cargo install --path . || { echo "❌ Failed to install pipe-cli"; exit 1; }
-cd ../.. || exit
+cd .. || exit
 
 # STEP 2: Run 'pipe new-user'
 echo "[2/4] Creating new Pipe user..."
