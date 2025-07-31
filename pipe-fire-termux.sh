@@ -11,9 +11,10 @@ cd pipe || { echo "❌ 'pipe' directory not found"; exit 1; }
 cargo install --path . || { echo "❌ Failed to install pipe-cli"; exit 1; }
 cd .. || exit
 
-# STEP 2: Run 'pipe new-user'
+# STEP 2: Run 'pipe new-user' with username
 echo "[2/4] Creating new Pipe user..."
-pipe new-user || { echo "❌ Failed to create user"; exit 1; }
+read -p "👉 Enter a username for Pipe: " USERNAME
+pipe new-user "$USERNAME" || { echo "❌ Failed to create user"; exit 1; }
 
 # STEP 3: Generate dummy files
 echo "[3/4] Creating dummy files..."
@@ -31,4 +32,4 @@ pipe upload-file pipe-dummy/sensitive.doc secure --encrypt
 pipe download-file secure decrypted.doc --decrypt
 
 echo ""
-echo "✅ Done! All test files uploaded and downloaded via Pipe CLI."
+echo "✅ Done! follow @admirkhen for more"
