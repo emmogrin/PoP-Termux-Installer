@@ -53,10 +53,10 @@ proot-distro login ubuntu
 ```
 
 ```
-git clone https://github.com/emmogrin/PoP-PC-Installer
-cd PoP-PC-Installer
-chmod +x pipe-firestarter.sh
-./pipe-firestarter.sh
+git clone https://github.com/emmogrin/PoP-Termux-Installer.git
+cd PoP-Termux-Installer
+chmod +x pipe-fire-termux.sh
+./pipe-fire-termux.sh
 ```
 
 ---
